@@ -1,0 +1,17 @@
+﻿@model IEnumerable<_01_WhatIsLinq.Student>
+@{
+    ViewBag.Title = "Index";
+    WebGrid grid = new WebGrid(Model, canPage: true, rowsPerPage: 2);
+}
+
+<h2>Bind GridView in MVC5 with Database</h2>
+@grid.GetHtml(columns: new[]
+
+{
+    grid.Column("ID"),
+    grid.Column("FirstName"),
+    grid.Column("LastName"),
+    grid.Column("Gender")
+}
+)
+
